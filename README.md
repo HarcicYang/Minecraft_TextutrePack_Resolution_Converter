@@ -20,7 +20,7 @@ To pack the program with [pyinstaller](https://github.com/pyinstaller/pyinstalle
 - atexit
 
 ## For users / 普通用户:
-You can download the program at [release](https://github.com/HarcicYang/Minecraft_TextutrePack_Resolution_Converter/releases/tag/1.0). / 您可以在[release](https://github.com/HarcicYang/Minecraft_TextutrePack_Resolution_Converter/releases/tag/1.0)中下载程序。
+You can download the program in [release](https://github.com/HarcicYang/Minecraft_TextutrePack_Resolution_Converter/releases/tag/1.0). / 您可以在[release](https://github.com/HarcicYang/Minecraft_TextutrePack_Resolution_Converter/releases/tag/1.0)中下载程序。
 ## Useage / 用法:
 1. Choose a texture pack / 选择一个材质包(资源包);
 2. Wait the program to prepare the files / 等待程序准备文件；
