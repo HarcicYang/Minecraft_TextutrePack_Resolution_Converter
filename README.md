@@ -18,6 +18,7 @@ To pack the program with [pyinstaller](https://github.com/pyinstaller/pyinstalle
 - shutil
 - pywin32
 - atexit
+- PIL
 
 ## For users / 普通用户:
 You can download the program in [release](https://github.com/HarcicYang/Minecraft_TextutrePack_Resolution_Converter/releases/tag/1.0). / 您可以在[release](https://github.com/HarcicYang/Minecraft_TextutrePack_Resolution_Converter/releases/tag/1.0)中下载程序。
