@@ -386,9 +386,9 @@ class Ui_MainWindow(object):
                 zip.write(os.path.join(path, filename), os.path.join(fpath, filename))
         zip.close()
         if localTimeZone == "Asia/Shanghai" or "Asia/Harbin" or "Asia/Chongqing" or "Asia/Urumqi" or "Asia/Kashgar":
-            win32api.MessageBox(0, "完成，文件保存为" + os.getcwd() + self.OutPutFile, "提醒", win32con.MB_ICONASTERISK)
+            win32api.MessageBox(0, "完成，文件保存为" + os.getcwd() + "/" + self.OutPutFile, "提醒", win32con.MB_ICONASTERISK)
         else:
-            win32api.MessageBox(0, "Finish! The file already saved to " + os.getcwd() + self.OutPutFile, "Notification", win32con.MB_ICONASTERISK)
+            win32api.MessageBox(0, "Finish! The file already saved to " + os.getcwd() + "/" + self.OutPutFile, "Notification", win32con.MB_ICONASTERISK)
 
 
 from PyQt5.QtWidgets import QApplication, QMainWindow  # 加载Qt窗口
