@@ -1,11 +1,11 @@
 import sys, zipfile, shutil, win32con, win32api, atexit, tzlocal, os
-from PIL import Image
+from PIL import Image, ImageFile
 from tkinter import filedialog
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 atexit.register(lambda: shutil.rmtree("./temp"))
 localTimeZone = tzlocal.get_localzone()
-
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
