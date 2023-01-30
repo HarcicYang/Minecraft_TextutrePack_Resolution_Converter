@@ -341,14 +341,16 @@ class Ui_MainWindow(object):
                 ProcessList = []
                 for j in List:
                     if ".png" in j:
-                        ProcessList.append(ProcessPath + j)
-                        print("ProcessPath#:" + ProcessPath + j)
+                        if ".png." in j:
+                            ProcessList.append(ProcessPath + j)
+                            print("ProcessPath#:" + ProcessPath + j)
                     else:
                         try:
                             TempList = os.listdir(ProcessPath + j)
                             for k in TempList:
                                 if ".png" in k:
-                                    ProcessList.append(ProcessPath + j + "/" + k)
+                                    if ".png." in k:
+                                        ProcessList.append(ProcessPath + j + "/" + k)
                         except:
                             pass
                 print("note: List finished")
