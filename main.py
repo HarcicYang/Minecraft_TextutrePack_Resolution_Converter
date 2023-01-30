@@ -282,8 +282,20 @@ class Ui_MainWindow(object):
             zip = zipfile.ZipFile(filePath)
             zipfile.ZipFile.extractall(zip, './temp/files/')
             zip.close()
-            with open("./temp/files/pack.mcmeta", "r") as f:
-                f.read()
+            try:
+                with open("./temp/files/pack.mcmeta", "r") as f:
+                    f.read()
+            except:
+                print("Read failed, trying gbk(gb18030)")
+                try:
+                    with open("./temp/files/pack.mcmeta", "r", encoding="gb18030") as f:
+                        f.read()
+                except:
+                    try:
+                        with open("./temp/files/pack.mcmeta", "r", encoding="Big5") as f:
+                            f.read()
+                    except:
+                        raise "error: cannot read file"
             self.PackImg = QtWidgets.QWidget(self.centralwidget)
             self.PackImg.setGeometry(QtCore.QRect(20, 80, 81, 81))
             self.PackImg.setAutoFillBackground(False)
@@ -307,6 +319,7 @@ class Ui_MainWindow(object):
                                     "and this problem appear again and again, "
                                     "please go to the GitHub repository to provide feedback.",
                                     "Notification", win32con.MB_ICONERROR)
+
 
     def Run(self):  # 运行
         self.OutPutFile = self.FileNameInput.text()
