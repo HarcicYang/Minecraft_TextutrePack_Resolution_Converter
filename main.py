@@ -282,20 +282,8 @@ class Ui_MainWindow(object):
             zip = zipfile.ZipFile(filePath)
             zipfile.ZipFile.extractall(zip, './temp/files/')
             zip.close()
-            try:
-                with open("./temp/files/pack.mcmeta", "r") as f:
-                    f.read()
-            except:
-                print("Read failed, trying gbk(gb18030)")
-                try:
-                    with open("./temp/files/pack.mcmeta", "r", encoding="gb18030") as f:
-                        f.read()
-                except:
-                    try:
-                        with open("./temp/files/pack.mcmeta", "r", encoding="Big5") as f:
-                            f.read()
-                    except:
-                        raise "error: cannot read file"
+            with open("./temp/files/pack.mcmeta", "r", errors="ignore") as f:
+                f.read()
             self.PackImg = QtWidgets.QWidget(self.centralwidget)
             self.PackImg.setGeometry(QtCore.QRect(20, 80, 81, 81))
             self.PackImg.setAutoFillBackground(False)
